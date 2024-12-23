@@ -5,19 +5,26 @@ import { Bell, Search, ShoppingCart, User, CheckCircle2 } from "lucide-react";
 
 export default function Header() {
   return (
-    <div className="min-h-screen flex flex-col items-center bg-background p-10">
+    <div className="h-auto flex flex-col items-center bg-background p-10">
       <header className="w-full bg-card p-4 flex justify-between items-center border-b">
         <div className="flex items-center space-x-4">
-          <img src="https://placehold.co/40x40" alt="OpenSea Logo" className="w-10 h-10"/>
           <span className="font-bold pr-5 border-r-2">METAHARBOR</span>
           <span className="pl-5">Drops</span>
           <span className="pl-5">Stats</span>
           <span className="pl-5">Create</span>
         </div>
+        <div className="flex justify-center flex-1 mx-4">
+            <div className="flex items-center space-x-2 border rounded-lg px-3 py-2">
+              <Search className="h-5 w-5 text-muted-foreground" />
+              <input 
+                type="text"
+                placeholder="Search items, collections and accounts"
+                className="bg-transparent border-none outline-non e min-w-[500px] h-[25px] text-sm placeholder:text-muted-foreground"
+              />
+            </div>
+        </div>
         <div className="flex items-center space-x-4">
-          <Button variant="ghost" size="icon">
-            <Search className="h-5 w-5" />
-          </Button>
+          
           <Button variant="ghost" size="icon">
             <User className="h-5 w-5" />
           </Button>
@@ -28,7 +35,7 @@ export default function Header() {
         </div>
       </header>
 
-      <div className="w-full bg-card p-4 flex justify-center space-x-4 border-b">
+      <div className="w-full bg-card p-4 flex space-x-4 border-b">
         {["All", "Art", "Gaming", "Memberships", "PFPs", "Photography", "Music"].map((item) => (
           <Button key={item} variant="outline" size="sm">
             {item}
@@ -36,7 +43,7 @@ export default function Header() {
         ))}
       </div>
 
-      <main className="w-full px-4 py-8">
+      <main className="w-full py-8">
           <Card className="overflow-hidden w-full h-[450px] bg-[url('https://placehold.co/800x200')]">
             <div className="w-full h-[200px] bg-cover bg-center" />
             <CardHeader className="flex flex-row items-center space-x-4">
