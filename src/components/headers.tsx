@@ -1,9 +1,15 @@
+"use client"
 import Image from "next/image";
 import { Button } from "@/ui/button";
 import { Card, CardContent, CardHeader } from "@/ui/card";
 import { Bell, Search, ShoppingCart, User, CheckCircle2 } from "lucide-react";
-
+import { useState } from "react";
+import ConnectWalletModal from "@/components/ConnectWallet";
 export default function Header() {
+  const [isShow, setIsShow] = useState(false);
+  const toggleModal = () => {
+    setIsShow(!isShow);
+  }
   return (
     <div className="h-auto flex flex-col items-center bg-background p-10">
       <header className="w-full bg-card p-4 flex justify-between items-center border-b">
@@ -23,7 +29,7 @@ export default function Header() {
               />
             </div>
         </div>
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center gap-4">
           
           <Button variant="ghost" size="icon">
             <User className="h-5 w-5" />
@@ -31,7 +37,17 @@ export default function Header() {
           <Button variant="ghost" size="icon">
             <ShoppingCart className="h-5 w-5" />
           </Button>
-          <Button variant="secondary">Login</Button>
+          <Button variant="secondary" onClick={() => setIsShow(!isShow)} className="flex items-center">
+            <Image src="/assets/svg/wellet.svg" alt="Wallet" width={24} height={24} className="mr-2" />
+            Login
+          </Button>
+          {isShow && (
+            <div className="fixed inset-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50" onClick={toggleModal}>
+              <div onClick={(e) => e.stopPropagation()}>
+                <ConnectWalletModal />
+              </div>
+            </div>
+          )}
         </div>
       </header>
 
@@ -44,7 +60,12 @@ export default function Header() {
       </div>
 
       <main className="w-full py-8">
-          <Card className="overflow-hidden w-full h-[450px] bg-[url('https://placehold.co/800x200')]">
+          <Card className="overflow-hidden w-full h-[450px]"
+          style={{
+            backgroundImage: "url('https://i.seadn.io/s/primary-drops/0x1f7983637c800e616cb48833b103311dfbb7fade/34007139:about:media:9af445a7-8833-41ef-ac35-4bdd938aec9a.gif?auto=format&dpr=1&w=3840')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}>
             <div className="w-full h-[200px] bg-cover bg-center" />
             <CardHeader className="flex flex-row items-center space-x-4">
               <img src="/assets/avt/avt.png" alt="Profile" className="w-12 h-12 rounded-full"/>
