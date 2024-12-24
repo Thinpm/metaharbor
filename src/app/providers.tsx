@@ -7,7 +7,7 @@ import { RainbowKitProvider, lightTheme } from '@rainbow-me/rainbowkit';
 import '@rainbow-me/rainbowkit/styles.css';
 import { useState } from "react";
 
-export function Providers({ children }: { children: React.ReactNode }) {
+export function Providers({ children }: { children: JSX.Element }) {
   const [queryClient] = useState(() => new QueryClient());
 
   return (
