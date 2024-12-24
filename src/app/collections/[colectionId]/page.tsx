@@ -42,7 +42,7 @@ export default function Collection() {
                         <div className="absolute bottom-0 right-0 p-4 text-white">
                             <div className="flex items-center space-x-8">
                                 <div className="text-center">
-                                    <p className="text-xl font-bold px-2">175 ETH</p>
+                                    <p className="text-xl font-bold">175 ETH</p>
                                     <p className="text-sm px-3">Total volume</p>
                                 </div>
                                 <div className="text-center">
@@ -66,31 +66,88 @@ export default function Collection() {
                     </div>
                 </div>
                 <div className="border-t border-gray-700 mt-4">
-                    <div className="flex justify-around p-4">
-                        <a href="#" className="hover:underline">Overview</a>
-                        <a href="#" className="hover:underline">Items</a>
-                        <a href="#" className="hover:underline">Offers</a>
-                        <a href="#" className="hover:underline">Analytics</a>
-                        <a href="#" className="hover:underline">Activity</a>
+                    <div className="flex justify-start p-4">  {/* Sử dụng justify-start để căn trái */}
+                        <a href="#" className="hover:underline px-10">Overview</a>
+                        <a href="#" className="hover:underline px-10">Items</a>
+                        <a href="#" className="hover:underline px-10">Offers</a>
+                        <a href="#" className="hover:underline px-10">Analytics</a>
+                        <a href="#" className="hover:underline px-10">Activity</a>
                     </div>
                 </div>
+
                 <div className="p-4">
-                    <div className="flex justify-between items-center">
-                        <div className="flex items-center space-x-2">
-                            <span className="bg-green-500 w-3 h-3 rounded-full"></span>
-                            <span>Live</span>
-                            <span className="font-bold">2,750 results</span>
+                    <div className="flex items-center justify-between mb-4">
+                        <div className="flex items-center">
+                            <span className="text-green-500 font-bold">Live</span>
+                            <span className="ml-2 text-gray-500">2,750 results</span>
                         </div>
-                        <div className="flex items-center space-x-2">
-                            <input type="text" placeholder="Search by name or trait" className="bg-gray-800 p-2 rounded" />
-                            <select className="bg-gray-800 p-2 rounded">
+                        <div className="flex items-center">
+                            <input type="text" placeholder="Search by name or trait" className="border rounded p-2 mr-4" />
+                            <select className="border rounded p-2">
                                 <option>Price low to high</option>
+                                <option>Price high to low</option>
                             </select>
-                            <button className="bg-gray-800 p-2 rounded"><i className="fas fa-th"></i></button>
-                            <button className="bg-gray-800 p-2 rounded"><i className="fas fa-list"></i></button>
+                        </div>
+                    </div>
+                    <div className="flex">
+                        <div className="w-1/4 p-4">
+                            <div className="mb-4">
+                                <h2 className="font-bold mb-2">Status</h2>
+                                <div className="flex items-center mb-2">
+                                    <span className="bg-green-500 rounded-full w-2 h-2 mr-2"></span>
+                                    <span>Listed</span>
+                                </div>
+                                <div className="flex items-center mb-2">
+                                    <span className="bg-gray-300 rounded-full w-2 h-2 mr-2"></span>
+                                    <span>On auction</span>
+                                </div>
+                                <div className="flex items-center mb-2">
+                                    <span className="bg-gray-300 rounded-full w-2 h-2 mr-2"></span>
+                                    <span>New</span>
+                                </div>
+                                <div className="flex items-center mb-2">
+                                    <span className="bg-gray-300 rounded-full w-2 h-2 mr-2"></span>
+                                    <span>Has offers</span>
+                                </div>
+                            </div>
+                            <div className="mb-4">
+                                <h2 className="font-bold mb-2">Price</h2>
+                                <div className="flex items-center mb-2">
+                                    <span className="bg-gray-300 rounded-full w-2 h-2 mr-2"></span>
+                                    <span>Currency</span>
+                                </div>
+                            </div>
+                            <div className="mb-4">
+                                <h2 className="font-bold mb-2">Traits</h2>
+                            </div>
+                            <div className="mb-4">
+                                <h2 className="font-bold mb-2">Status</h2>
+                                <div className="flex items-center mb-2">
+                                    <span className="bg-gray-300 rounded-full w-2 h-2 mr-2"></span>
+                                    <span>1</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="w-3/4 grid grid-cols-3 gap-4">
+                            {Array.from({ length: 6 }).map((_, index) => (
+                                <div key={index} className="border rounded-lg p-4">
+                                    <img src="https://placehold.co/300x200" alt="9dcc Black Box" className="w-full mb-4" />
+                                    <h3 className="font-bold mb-2">9dcc Black Box #{1430 + index}</h3>
+                                    <p className="text-gray-500 mb-2">0.078 ETH</p>
+                                    {index === 1 ? (
+                                        <button className="bg-blue-500 text-white rounded p-2 w-full">
+                                            Buy now
+                                        </button>
+                                    ) : (
+                                        <p className="text-gray-500">Last sale: 0.07 WETH</p>
+                                    )}
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
+                ;
+                ;
             </main>
         </div>
     );
