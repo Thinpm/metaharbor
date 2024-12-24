@@ -1,25 +1,9 @@
 import type { JSX } from 'react';
-
+import Header from '@/components/headers';
 export default function Collection() {
     return (
         <div>
-            <header className="flex justify-between items-center p-4 bg-black">
-                <div className="flex items-center space-x-4">
-                    <img src="https://placehold.co/40x40" alt="METAHARBOR logo" className="mr-2" />
-                    <span className="text-xl font-bold text-white">METAHARBOR </span>
-                    <span className="border-l border-gray-500 h-6 mx-2"></span> {/* Dấu gạch thẳng */}
-                    <nav className="flex space-x-4">
-                        <a href="#" className="hover:underline text-white">Drops</a>
-                        <a href="#" className="hover:underline text-white">Stats</a>
-                        <a href="#" className="hover:underline text-white">Create</a>
-                    </nav>
-                </div>
-                <div className="flex space-x-4">
-                    <button className="bg-gray-800 p-2 rounded text-white">Login</button>
-                    <button className="bg-gray-800 p-2 rounded text-white"><i className="fas fa-user"></i></button>
-                    <button className="bg-gray-800 p-2 rounded text-white"><i className="fas fa-shopping-cart"></i></button>
-                </div>
-            </header>
+            <Header />
             <main>
                 <div className="relative">
                     <img src="https://placehold.co/1200x300" alt="Background image" className="w-full h-[600px] object-cover" />
