@@ -13,7 +13,7 @@ export default function Header() {
     setIsShow(!isShow);
   }
   return (
-    <div className="h-auto flex flex-col items-center bg-background p-10">
+    <div className="h-auto flex flex-col items-center bg-background">
       <header className="w-full bg-card p-4 flex justify-between items-center border-b">
         <div className="flex items-center space-x-4">
           <span className="font-bold pr-5 border-r-2">METAHARBOR</span>
