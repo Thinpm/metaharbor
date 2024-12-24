@@ -8,8 +8,8 @@ export const ancient8Testnet = {
     symbol: 'ETH',
   },
   rpcUrls: {
-    public: { http: ['https://rpc-testnet.ancient8.gg'] },
-    default: { http: ['https://rpc-testnet.ancient8.gg'] },
+    public: { http: ['https://rpcv2-testnet.ancient8.gg'] },
+    default: { http: ['https://rpcv2-testnet.ancient8.gg'] },
   },
   blockExplorers: {
     default: { name: 'Ancient8 Explorer', url: 'https://scanv2-testnet.ancient8.gg' },
