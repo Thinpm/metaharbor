@@ -162,7 +162,7 @@ const Test = () => {
         <div className="p-4">
                     <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center">
-                            <span className="text-green-500 font-bold">Live</span>
+                            <span className="text-red-500 font-bold">Live</span>
                             <span className="ml-2 text-gray-500">2,750 results</span>
                         </div>
                         <div className="flex items-center">
@@ -215,17 +215,14 @@ const Test = () => {
                         <div className="w-3/4 grid grid-cols-3 gap-4">
                             {Array.from({ length: 6 }).map((_, index) => (
                                 <div key={index} className="border rounded-lg p-4">
-                                    <img src="https://placehold.co/300x200" alt="9dcc Black Box" className="w-full mb-4" />
-                                    <h3 className="font-bold mb-2">9dcc Black Box #{1430 + index}</h3>
-                                    <p className="text-gray-500 mb-2">0.078 ETH</p>
-                                    {index === 1 ? (
-                                        <button className="bg-blue-500 text-white rounded p-2 w-full">
-                                            Buy now
-                                        </button>
-                                    ) : (
-                                        <p className="text-gray-500">Last sale: 0.07 WETH</p>
-                                    )}
-                                </div>
+                                <img src="https://placehold.co/300x200" alt={`9dcc Black Box #${1430 + index}`} className="w-full mb-4" />
+                                <h3 className="font-bold mb-2">9dcc Black Box #{1430 + index}</h3>
+                                <p className="text-gray-500 mb-2">0.078 ETH</p>
+                                <button className="bg-blue-500 text-white rounded p-2 w-full, hover: bg-blue-700">
+                                  Buy now
+                                </button>
+                                <p className="text-gray-500 mt-2">Last sale: 0.07 WETH</p>
+                              </div>                               
                             ))}
                         </div>
                     </div>

@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader } from "@/ui/card";
 import { Bell, Search, ShoppingCart, User, CheckCircle2 } from "lucide-react";
 import Headers from "@/components/headers";
 import Link from "next/link";
+import { FaCheckCircle, FaTwitter } from "react-icons/fa";
 const collections = [
     { rank: 1, name: "Bored Ape", img: "https://placehold.co/40", price: "0.1 ETH", volume: "12.8 ETH", verified: true },
     { rank: 2, name: "CryptoPunks", img: "https://placehold.co/40", price: "0.08 ETH", volume: "10.2 ETH", verified: true },
@@ -93,7 +94,7 @@ export default function Home() {
                         <div className="flex space-x-2">
                             {[
                                 { value: "0", label: "days" },
-                                { value: "12", label: "hrs" },
+                                { value: "13", label: "hrs" },
                                 { value: "6", label: "mins" },
                                 { value: "35", label: "secs" }
                             ].map((item) => (
@@ -211,8 +212,8 @@ export default function Home() {
                     <div className="bg-white shadow rounded-lg p-4">
                         <img src="https://placehold.co/200x200" alt="Froggy Friends" className="w-full h-40 object-cover rounded-lg mb-4" />
                         <div className="flex items-center justify-between">
-                            <span className="text-lg font-semibold">Froggy Friends</span>
-                            <i className="fas fa-check-circle text-blue-500 ml-2"></i>
+                            <span className="text-lg font-semibold">9dcc Black Box</span>
+                            <FaCheckCircle width={4} height={4} className="text-blue-500" />
                         </div>
                         <div className="text-sm">Floor</div>
                         <div className="text-lg">0.09 ETH</div>
